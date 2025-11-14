@@ -57,11 +57,6 @@ src/
 │       └── en.json
 └── test/               # Test configuration
     └── setup.ts
-
-supabase/
-└── functions/          # Edge Functions
-    ├── announcements/
-    └── quizzes/
 ```
 
 ## Installation
@@ -100,30 +95,32 @@ npm install
 ### API Integration
 - Supabase Edge Functions for all CRUD operations
 - RESTful API endpoints:
-  - `GET /functions/v1/quizzes` - Fetch all quizzes
-  - `POST /functions/v1/quizzes` - Create quiz
-  - `PUT /functions/v1/quizzes/:id` - Update quiz
-  - `DELETE /functions/v1/quizzes/:id` - Delete quiz
+  - `GET /api/quizzes` - Fetch all quizzes
+  - `POST /api/quizzes` - Create quiz
+  - `PUT /api/quizzes/:id` - Update quiz
+  - `DELETE /api/quizzes/:id` - Delete quiz
   - Similar endpoints for announcements
 
 ### Database Schema
 
 **Quizzes Table:**
-- id (uuid, primary key)
-- title (text)
-- description (text)
-- due_date (timestamptz)
-- total_points (integer)
-- duration_minutes (integer)
-- created_at, updated_at (timestamptz)
-- published (boolean)
+-_id: string;
+-  title: string;
+-  description?: string;
+- questions: IQuestion[];
+-  duration: number;
+-  passingScore: number;
+- isActive: boolean;
+-  createdAt: Date;
+- updatedAt: Date;
 
 **Announcements Table:**
-- id (uuid, primary key)
-- title (text)
-- content (text)
-- created_at, updated_at (timestamptz)
-- published (boolean)
+- _id: string;
+-  title: string;
+-  content: string;
+-  createdAt: string;
+-  updated_at: string;
+-  published: boolean;
 
 ### Responsive Design
 - Mobile-first approach
@@ -155,7 +152,6 @@ npm install
 All application code was written specifically for this project, including:
 - All React components and their logic
 - Redux store configuration and slices
-- Supabase Edge Functions
 - Database migrations and schema
 - Test suites
 - HOC implementation
@@ -163,11 +159,4 @@ All application code was written specifically for this project, including:
 
 The only boilerplate used is from the initial Vite + React + TypeScript template configuration.
 
-## Future Enhancements
 
-- Add more languages for i18n
-- Implement real authentication with Supabase Auth
-- Add quiz submission and grading functionality
-- Implement announcement notifications
-- Add search and filter capabilities
-- Dark mode support
