@@ -1,0 +1,22 @@
+{
+  "welcome": "Welcome to Student Dashboard",
+  "login": "Login",
+  "logout": "Logout",
+  "dashboard": "Dashboard",
+  "quizzes": "Quizzes",
+  "announcements": "Announcements",
+  "home": "Home",
+  "dueDate": "Due Date",
+  "points": "Points",
+  "duration": "Duration",
+  "minutes": "minutes",
+  "description": "Description",
+  "title": "Title",
+  "content": "Content",
+  "createdAt": "Created At",
+  "noQuizzes": "No quizzes available",
+  "noAnnouncements": "No announcements available",
+  "loading": "Loading...",
+  "error": "An error occurred",
+  "pleaseLogin": "Please login to access the dashboard"
+}
